@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DetailActivity">
+
+    <TextView
+        android:id="@+id/nama_pemain"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="Kyllian Mbape"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/asal_pemain"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="Prance"
+        android:textColor="#FF9800"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nama_pemain"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/asal_pemain">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/my_gambar"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/mbape1"/>
+
+            <TextView
+                android:id="@+id/my_biografi"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="18dp"
+                android:textSize="18dp"
+                android:layout_marginStart="18dp"
+                android:text="Kylian Mbappe adalah seorang pemain sepak bola profesional Prancis yang bermain sebagai penyerang untuk Paris Saint-Germain dan tim nasional Prancis. Dianggap sebagai salah satu pemain terbaik di dunia, dia terkenal karena kemampuannya menggiring bola, kecepatan yang luar biasa, dan finishing yang bagus. Mbappé sudah menonjol pada usia dini, ia menjadi bintang bagi akademi remaja di AS Bondy, INF Clairefontaine, dan Monaco, klub terakhir ini membuat debutnya sebagai seorang pemain profesional untuk tim cadangan. Mbappé segera menjadi starter reguler dan pencetak gol untuk tim pertama di musim 2016-17, membantu klub mendapatkan gelar pertama mereka di Ligue 1 di usia tujuh belas tahun. "
+                android:textAlignment="textStart"
+                android:gravity="start"
+                android:layout_marginLeft="18dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

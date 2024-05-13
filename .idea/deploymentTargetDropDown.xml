@@ -22,24 +22,27 @@
               <deviceKey>
                 <Key>
                   <type value="VIRTUAL_DEVICE_PATH" />
-                  <value value="C:\Users\ACER NITRO 5\.android\avd\Pixel_8_Pro_API_30.avd" />
+                  <value value="C:\Users\ACER NITRO 5\.android\avd\Pixel_3_API_30.avd" />
                 </Key>
               </deviceKey>
             </Target>
           </targetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2024-03-25T19:20:45.637958Z" />
+          <timeTargetWasSelectedWithDropDown value="2024-05-13T00:39:14.792572600Z" />
           <targetsSelectedWithDialog>
             <Target>
               <type value="QUICK_BOOT_TARGET" />
               <deviceKey>
                 <Key>
                   <type value="VIRTUAL_DEVICE_PATH" />
-                  <value value="C:\Users\ACER NITRO 5\.android\avd\Pixel_8_Pro_API_30.avd" />
+                  <value value="C:\Users\ACER NITRO 5\.android\avd\Pixel_3_API_30.avd" />
                 </Key>
               </deviceKey>
             </Target>
           </targetsSelectedWithDialog>
         </State>
+      </entry>
+      <entry key="detail_activity">
+        <State />
       </entry>
     </value>
   </component>

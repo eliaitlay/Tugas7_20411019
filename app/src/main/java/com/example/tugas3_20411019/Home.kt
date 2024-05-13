@@ -1,11 +1,8 @@
 package com.example.tugas3_20411019
 
-import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -13,40 +10,86 @@ import androidx.recyclerview.widget.RecyclerView
 class Home : AppCompatActivity() {
 
     private lateinit var sepakbolaRecyclerView: RecyclerView
-    private lateinit var sepakbolaAdapter: MyAdapter
-    private lateinit var listsepakbola : ArrayList<ItemData>
+    private lateinit var nama: Array<String>
+    private lateinit var asal: Array<String>
+    private lateinit var gambar: Array<Int>
+    private lateinit var biografi: Array<String>
+    private lateinit var listpemain: ArrayList<ItemData>
 
-    @SuppressLint("MissingInflatedId", "SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_home)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.sepakbola)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
 
-    sepakbolaRecyclerView = findViewById(R.id.sepakbola)
-    listsepakbola = ArrayList()
+        gambar = arrayOf(
+            R.drawable.mbape1,
+            R.drawable.mane2,
+            R.drawable.img3,
+            R.drawable.ronaldo4,
+            R.drawable.messi5,
+            R.drawable.neymar6,
+            R.drawable.karim7,
+            R.drawable.luka8,
+            R.drawable.robert9,
+            R.drawable.mohamed10,
+        )
 
-        listsepakbola.add(ItemData(R.drawable.mbape1,"Kylian Mbappe", "Prance"))
-        listsepakbola.add(ItemData(R.drawable.mane2,"Sadio mane", "Afrika"))
-        listsepakbola.add(ItemData(R.drawable.img3,"Vinicius Jr ", "Brazil"))
-        listsepakbola.add(ItemData(R.drawable.ronaldo4,"Ronaldo", "Portugal"))
-        listsepakbola.add(ItemData(R.drawable.messi5,"Lionel Messi", "Argentina"))
-        listsepakbola.add(ItemData(R.drawable.neymar6,"Neymar Jr", "Brazil"))
-        listsepakbola.add(ItemData(R.drawable.karim7,"Karim Benzema", "Prance"))
-        listsepakbola.add(ItemData(R.drawable.luka8,"Luka Modric", "Kroasia"))
-        listsepakbola.add(ItemData(R.drawable.robert9,"Robert Lewandowski ", "Polandia"))
-        listsepakbola.add(ItemData(R.drawable.mohamed10,"Mohamed Salah ", "Mesir"))
+        nama = arrayOf(
+            "Kylian Mbappe", "Sadio mane", "Vinicius Jr", "Ronaldo", "Lionel Messi",
+            "Neymar Jr", "Karim Benzema", "Luka Modric", "Robert Lewandowski", "Mohamed Salah",
+        )
 
+        asal = arrayOf(
+            "Prance",
+            "Afrika",
+            "Brasil",
+            "Portugal",
+            "Argentina",
+            "Brasil",
+            "Prance",
+            "Kroasia",
+            "Polandia",
+            "Mesir",
+        )
+
+        biografi = arrayOf(
+            getString(R.string.kylian_mbappe),
+            getString(R.string.sadio_mane),
+            getString(R.string.vinicius_jr),
+            getString(R.string.ronaldo),
+            getString(R.string.lionel_messi),
+            getString(R.string.neymar_jr),
+            getString(R.string.karim_benzema),
+            getString(R.string.luka_mordric),
+            getString(R.string.robert_lewandowski),
+            getString(R.string.mohamed_salah),
+        )
+
+        sepakbolaRecyclerView = findViewById(R.id.sepakbola)
         sepakbolaRecyclerView.layoutManager = LinearLayoutManager(this)
         sepakbolaRecyclerView.setHasFixedSize(true)
-        sepakbolaAdapter = MyAdapter(listsepakbola)
-        sepakbolaRecyclerView.adapter = sepakbolaAdapter
+
+        listpemain = arrayListOf<ItemData>()
+        getDataUser()
     }
 
+    private fun  getDataUser() {
+        for (i in gambar.indices){
+            val datapemain = ItemData(gambar[i], nama[i],asal[i])
+            listpemain.add(datapemain)
+        }
+
+        var adapter = MyAdapter(listpemain)
+        sepakbolaRecyclerView.adapter = adapter
+        adapter.setOnItemClickListener(object : MyAdapter.onItemClickListener{
+            override fun onItemClick(position: Int){
+                intent = Intent (this@Home,DetailActivity::class.java)
+                intent.putExtra("idgambar",listpemain[position].gambar)
+                intent.putExtra("idnama",listpemain[position].nama)
+                intent.putExtra("idasal",listpemain[position].asal)
+                intent.putExtra("idbiografi",biografi[position])
+
+                startActivity(intent)
+            }
+        })
     }
-
-
+}

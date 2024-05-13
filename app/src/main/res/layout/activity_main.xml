@@ -10,105 +10,143 @@
     android:background="@drawable/bg">
 
 
+    <ImageView
+        android:layout_width="298dp"
+        android:layout_height="173dp"
+        android:layout_gravity="center"
+        android:src="@drawable/icon_login1" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
         android:text="Login"
         android:textColor="#000000"
         android:textSize="30dp"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textViewUsername"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Username"
-        android:textSize="18sp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="60dp"
-        android:textColor="@color/material_dynamic_neutral0"/>
+
+
+
 
     <EditText
-        android:id="@+id/editTextUsername"
+        android:id="@+id/edtEmail"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter your Name"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:drawablePadding="8dp"
+        android:hint="your email"
         android:inputType="text"
-        android:layout_marginTop="4dp"
-        android:textColor="@color/design_default_color_on_secondary"/>
-    <TextView
-        android:id="@+id/textViewPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Password"
-        android:textSize="18sp"
-        android:layout_marginTop="20sp"
-        android:layout_marginBottom="8dp"
-        android:textColor="@color/design_default_color_on_secondary"/>
+        android:textColor="@color/design_default_color_on_secondary"
+        tools:ignore="TouchTargetSizeCheck"
+        android:drawableLeft="@drawable/iclay_email"/>
+
 
     <EditText
-        android:id="@+id/editTextPassword"
+        android:id="@+id/edtPassword"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter your password"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:hint="your password"
         android:inputType="textPassword"
-        android:layout_marginTop="4dp"
-        />
+        tools:ignore="TouchTargetSizeCheck"
+        android:drawableLeft="@drawable/pass_icon"
+        android:drawablePadding="8dp"/>
 
     <TextView
-        android:id="@+id/textViewLupaPassword"
-        android:layout_width="match_parent"
+        android:id="@+id/forgetPassword"
+        android:layout_width="183dp"
         android:layout_height="wrap_content"
-        android:text="Forget Password"
-        android:textSize="18sp"
-        android:layout_marginTop="20sp"
-        android:layout_marginBottom="8dp"
         android:layout_gravity="right"
         android:layout_marginLeft="185dp"
-        android:textColor="@color/purple_700"
-        android:textStyle="bold"/>
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Forget Password?"
+        android:textColor="#00F80A"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnlogin"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:text="LOGIN"
-        android:background="#0026F8"
-        android:textColor="@color/white"
-        android:textSize="30dp"
         android:layout_width="match_parent"
-        android:layout_height="60dp"/>
+        android:layout_height="60dp"
+        android:layout_marginTop="2dp"
+        android:text="LOGIN"
+        android:textColor="@color/material_dynamic_primary100"
+        android:layout_below="@id/editEmail"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"/>
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Have an acount?"
-        android:textSize="20dp"
-        android:layout_gravity="center"
-        android:textStyle="bold"
+        android:layout_marginLeft="40dp"
         android:layout_marginTop="10dp"
-        android:textColor="@color/design_default_color_on_secondary"
-        />
+        android:text="I Don't Have an acount?"
+        android:textColor="@color/material_dynamic_neutral0"
+        android:textSize="17dp"
+         />
 
     <TextView
-        android:id="@+id/textViewRegister"
-        android:layout_width="match_parent"
+        android:id="@+id/textRegister"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="120dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="104dp"
         android:layout_marginTop="-28dp"
         android:text="Register"
-        android:textColor="#072BF4"
+        android:textColor="#00F80A"
         android:textSize="20dp"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:textStyle="bold"
+        android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/texMedia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:shadowColor="@android:color/holo_green_dark"
+        android:text="------ Or Login With ------"
+        android:textColor="@color/purple_700"
+        android:textSize="18dp"
+        android:textStyle="bold"
         />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="5dp">
+
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/icon_google">
+
+        </ImageView>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/icon_ios">
+
+        </ImageView>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/icon_fecebook">
+
+        </ImageView>
+
+
+    </LinearLayout>
 
 </LinearLayout>
